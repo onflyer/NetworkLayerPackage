@@ -7,15 +7,6 @@
 
 import Foundation
 
-public enum APIConstants {
-    static let scheme = ""    //MARK: https or http
-    static let host = ""      //MARK: baseURL "api.themoviedb.org"
-    static let path = ""      //MARK: path "/3/account/20029223/favorite/movies"
-    static let headers: [String: String] = [:]  //MARK: ["content-type": "application/json", "accept": "application/json"]
-    static var params: [String : Any] = [:]
-    static var urlParams: [String: String?] = [:]
-}
-
 public protocol URLComponentsProtocol {
     var httpMethod: HTTPMethod { get }
     var host : String { get }
@@ -26,18 +17,25 @@ public protocol URLComponentsProtocol {
 }
 
 public extension URLComponentsProtocol {
+    
+    var httpMethod: HTTPMethod {
+        .GET
+    }
+    var scheme: String {
+        return ""
+    }
     var host: String {
         return ""
     }
-    
+    var path: String {
+        return ""
+    }
     var headers: [String: String] {
         [:]
     }
-
     var params: [String: Any] {
         [:]
     }
-
     var urlParams: [String: String?] {
         [:]
     }

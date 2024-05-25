@@ -42,7 +42,7 @@ public extension URLComponentsProtocol {
     
     func request() throws -> URLRequest {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = scheme
         components.host = host
         components.path = path
 
